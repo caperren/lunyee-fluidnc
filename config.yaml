@@ -135,3 +135,8 @@ use_line_numbers: false
 planner_blocks: 16
 PWM:
   output_pin: gpio.21
+  pwm_hz: 78125
+  disable_with_s0: true
+  s0_with_disable: true
+  spinup_ms: 2000
+  spindown_ms: 2000
