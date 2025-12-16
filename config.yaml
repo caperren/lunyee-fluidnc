@@ -29,12 +29,12 @@ axes:
     motor0:
       limit_neg_pin: NO_PIN
       limit_pos_pin: NO_PIN
-      limit_all_pin: gpio.48
+      limit_all_pin: gpio.36:low:pu
       hard_limits: false
       pulloff_mm: 1
       standard_stepper:
-        step_pin: gpio.14
-        direction_pin: gpio.12
+        step_pin: gpio.12
+        direction_pin: gpio.14
         disable_pin: NO_PIN
   y:
     steps_per_mm: 80
@@ -45,12 +45,12 @@ axes:
     motor0:
       limit_neg_pin: NO_PIN
       limit_pos_pin: NO_PIN
-      limit_all_pin: gpio.35
+      limit_all_pin: gpio.35:low:pu
       hard_limits: false
       pulloff_mm: 1
       standard_stepper:
-        step_pin: gpio.10
-        direction_pin: gpio.8
+        step_pin: gpio.8
+        direction_pin: gpio.10:low
         disable_pin: NO_PIN
   z:
     steps_per_mm: 80
@@ -61,18 +61,18 @@ axes:
     motor0:
       limit_neg_pin: NO_PIN
       limit_pos_pin: NO_PIN
-      limit_all_pin: gpio.36
+      limit_all_pin: gpio.48:low:pu
       hard_limits: false
       pulloff_mm: 1
       standard_stepper:
-        step_pin: gpio.17
-        direction_pin: gpio.15
+        step_pin: gpio.15
+        direction_pin: gpio.17:low
         disable_pin: NO_PIN
 control:
   safety_door_pin: NO_PIN
   reset_pin: NO_PIN
-  feed_hold_pin: NO_PIN
-  cycle_start_pin: NO_PIN
+  feed_hold_pin: gpio.37:low:pu
+  cycle_start_pin: gpio.38:low:pu
   macro0_pin: NO_PIN
   macro1_pin: NO_PIN
   macro2_pin: NO_PIN
@@ -80,7 +80,7 @@ control:
   fault_pin: NO_PIN
   estop_pin: NO_PIN
 probe:
-  pin: NO_PIN
+  pin: gpio.2:low:pu
   toolsetter_pin: NO_PIN
   check_mode_start: true
   hard_stop: false
@@ -88,7 +88,7 @@ macros: {}
 start:
   must_home: false
   deactivate_parking: false
-  check_limits: true
+  check_limits: false
 parking:
   enable: false
   axis: Z
