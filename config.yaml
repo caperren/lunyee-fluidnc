@@ -17,7 +17,7 @@ sdcard:
   frequency_hz: 8000000
 kinematics: {}
 axes:
-  shared_stepper_disable_pin: gpio.21
+  shared_stepper_disable_pin: gpio.47
   shared_stepper_reset_pin: NO_PIN
   homing_runs: 2
   x:
@@ -29,7 +29,7 @@ axes:
     motor0:
       limit_neg_pin: NO_PIN
       limit_pos_pin: NO_PIN
-      limit_all_pin: gpio.47
+      limit_all_pin: gpio.48
       hard_limits: false
       pulloff_mm: 1
       standard_stepper:
@@ -45,7 +45,7 @@ axes:
     motor0:
       limit_neg_pin: NO_PIN
       limit_pos_pin: NO_PIN
-      limit_all_pin: gpio.48
+      limit_all_pin: gpio.35
       hard_limits: false
       pulloff_mm: 1
       standard_stepper:
@@ -61,7 +61,7 @@ axes:
     motor0:
       limit_neg_pin: NO_PIN
       limit_pos_pin: NO_PIN
-      limit_all_pin: gpio.35
+      limit_all_pin: gpio.36
       hard_limits: false
       pulloff_mm: 1
       standard_stepper:
@@ -79,10 +79,6 @@ control:
   macro3_pin: NO_PIN
   fault_pin: NO_PIN
   estop_pin: NO_PIN
-coolant:
-  flood_pin: NO_PIN
-  mist_pin: NO_PIN
-  delay_ms: 0
 probe:
   pin: NO_PIN
   toolsetter_pin: NO_PIN
@@ -138,4 +134,4 @@ enable_parking_override_control: false
 use_line_numbers: false
 planner_blocks: 16
 PWM:
-  output_pin: gpio.6
+  output_pin: gpio.21
