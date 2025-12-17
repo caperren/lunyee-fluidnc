@@ -21,53 +21,68 @@ axes:
   shared_stepper_reset_pin: NO_PIN
   homing_runs: 2
   x:
-    steps_per_mm: 80
-    max_rate_mm_per_min: 1000
+    steps_per_mm: 800
+    max_rate_mm_per_min: 5000
     acceleration_mm_per_sec2: 25
-    max_travel_mm: 1000
-    soft_limits: false
+    max_travel_mm: 300
+    soft_limits: true
     motor0:
       limit_neg_pin: NO_PIN
       limit_pos_pin: NO_PIN
       limit_all_pin: gpio.36:low:pu
-      hard_limits: false
+      hard_limits: true
       pulloff_mm: 1
       standard_stepper:
         step_pin: gpio.12
         direction_pin: gpio.14
         disable_pin: NO_PIN
+    homing:
+      cycle: 2
+      positive_direction: false
+      seek_mm_per_min: 500
+      feed_mm_per_min: 20
   y:
-    steps_per_mm: 80
-    max_rate_mm_per_min: 1000
+    steps_per_mm: 800
+    max_rate_mm_per_min: 5000
     acceleration_mm_per_sec2: 25
-    max_travel_mm: 1000
-    soft_limits: false
+    max_travel_mm: 180
+    soft_limits: true
     motor0:
       limit_neg_pin: NO_PIN
       limit_pos_pin: NO_PIN
       limit_all_pin: gpio.35:low:pu
-      hard_limits: false
+      hard_limits: true
       pulloff_mm: 1
       standard_stepper:
         step_pin: gpio.8
         direction_pin: gpio.10:low
         disable_pin: NO_PIN
+    homing:
+      cycle: 2
+      seek_mm_per_min: 500
+      feed_mm_per_min: 20
+      mpos_mm: 300
   z:
-    steps_per_mm: 80
+    steps_per_mm: 800
     max_rate_mm_per_min: 1000
     acceleration_mm_per_sec2: 25
-    max_travel_mm: 1000
-    soft_limits: false
+    max_travel_mm: 75
+    soft_limits: true
     motor0:
       limit_neg_pin: NO_PIN
       limit_pos_pin: NO_PIN
       limit_all_pin: gpio.48:low:pu
-      hard_limits: false
+      hard_limits: true
       pulloff_mm: 1
       standard_stepper:
         step_pin: gpio.15
         direction_pin: gpio.17:low
         disable_pin: NO_PIN
+    homing:
+      cycle: 1
+      positive_direction: true
+      feed_mm_per_min: 20
+      mpos_mm: 80
 control:
   safety_door_pin: NO_PIN
   reset_pin: NO_PIN
@@ -86,7 +101,7 @@ probe:
   hard_stop: false
 macros: {}
 start:
-  must_home: false
+  must_home: true
   deactivate_parking: false
   check_limits: true
 parking:
