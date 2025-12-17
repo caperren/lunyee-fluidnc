@@ -155,3 +155,4 @@ PWM:
   s0_with_disable: true
   spinup_ms: 2000
   spindown_ms: 2000
+  speed_map: 0=0% 0=22% 10000=100%
